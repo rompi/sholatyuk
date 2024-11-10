@@ -32,7 +32,7 @@ func main() {
 	telegramClient := telegram.NewTelegramClient(config.GlobalConfig.TelegramBotToken)
 	prayerTimesService := services.NewPrayerTimesService(apiClient)
 	prayerTimesService.SetPrayerNotificationPort(telegramClient)
-	adhanTimes, err := prayerTimesService.GetPrayerTimes(ctx, time.Now().Format("2006-01-02"))
+	adhanTimes, err := prayerTimesService.GetPrayerTimes(ctx, time.Now().Format("02-01-2006"))
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
 		return
